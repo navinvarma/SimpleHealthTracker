@@ -2,7 +2,7 @@
 A web app that is useful for daily logging of blood pressure, glucose, weight and meal information to send directly to your email. No information is stored as the user fills a form that is directly sent via SMTP. Users can then choose to extract the data from their emails at a later time.
 
 # Technologies
-This web application runs on a MEAN stack and was originally developed in 2020 using the package versions available at that time. See "Additional Notes"
+This web application runs on Node.js + Express and was originally developed in 2020 using the package versions available at that time. See "Additional Notes"
 * [Node.js](https://nodejs.org/en/) for app server.
 * [Express](https://expressjs.com/) middleware to connect API routes to Node.js server.
 * [Nodemailer](https://nodemailer.com/about/) for SMTP based emails using auth setup from [/config.js](/config.js) file.
