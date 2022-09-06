@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Simple Health Tracker</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("dateTimeLocal").value = new Date(new Date().toString().split('GMT')[0] + ' UTC').toISOString().split('.')[0];
+            document.getElementById("emailAddress").multiple = true;
+        }
+    </script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <div class="container">
+        <h1> Simple Health Tracker </h1>
+        <form method="POST" id="mailHalthInfo" action="/sendEmail">
+            <div class="row mb-3">
+                <div class="col-sm">
+                    <label for="emailAddress" class="form-label">Send this log to Email * </label>
+                    <input type="email" class="form-control form-control-sm " id="emailAddress" name="emailAddress"
+                        placeholder="name1@example.com,name2@example.com" required>
+                </div>
+
+                <div class="col-sm">
+                    <label for="dateTimeLocal" class="form-label">Date & Time * </label>
+                    <input type="datetime-local" class="form-control form-control-sm" id="dateTimeLocal"
+                        name="dateTimeLocal" step="1" required>
+                </div>
+            </div>
+
+            <h3>Blood Pressure</h3>
+            <table class="table table-sm">
+                <tr>
+
+                    <th scope="col">Reading</th>
+                    <th scope="col">Systolic</th>
+                    <th scope="col">Diastolic</th>
+                    <th scope="col">Pulse</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpSys1" name="bpSys1">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpDia1" name="bpDia1">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpPulse1" name="bpPulse1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpSys2" name="bpSys2">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpDia2" name="bpDia2">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpPulse2" name="bpPulse2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpSys3" name="bpSys3">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpDia3" name="bpDia3">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control form-control-sm" id="bpPulse3" name="bpPulse3">
+                    </td>
+                </tr>
+            </table>
+
+            <h3>Glucose</h3>
+            <div class="row mb-3">
+                <div class="col-sm">
+                    <label for="glucoseReadingType" class="form-label">Reading Type</label>
+                    <select class="form-control form-control-sm" id="glucoseReadingType" name="glucoseReadingType">
+                        <option value="Fasting">Fasting</option>
+                        <option value="After Lunch">After Lunch</opttion>
+                        <option value="After Dinner">After Dinner</option>
+                        <option value="Ad-Hoc">Ad-Hoc</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="glucoseReading" class="form-label">Glucose</label>
+                    <input type="text" class="form-control form-control-sm" id="glucoseReading" name="glucoseReading">
+                </div>
+            </div>
+            <h3>Other</h3>
+            <div class="col-sm">
+                <label for="weightReading" class="form-label">Weight</label>
+                <input type="text" class="form-control form-control-sm" id="weightReading" name="weightReading">
+            </div>
+            <h3>Meal</h3>
+            <div class="row mb-3">
+                <div class="col-lg">
+                    <label for="mealLog" class="form-label">What I ate</label>
+                    <textarea class="form-control form-control-sm" id="mealLog" name="mealLog" rows="3"
+                        maxlength="1000"></textarea>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Email Me!</button>
+            <p class="mt-3"><b>Disclaimer:</b> This application does not store any data entered in this form. It is
+                meant for people who want to quickly send their reading to an email so they don't lose track of it. All
+                data is transient in nature and is not logged in the server or any data store. The author is not
+                responsible for data in your email after it is received.</p>
+        </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="footer">
+        Developed by <a target="_blank" href="https://www.nvarma.com">Navin Varma</a>
+    </div>
+</body>
+
+</html>

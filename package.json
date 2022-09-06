@@ -1,0 +1,21 @@
+{
+    "name": "simple-health-tracker",
+    "version": "1.0.0",
+    "description": "A simple app to email instant updates of Blood Pressure, Glucose, Weight and Meal logs. This app does not store any of this information as it sends out an email as soon as you click the 'Send Email' button.",
+    "author": "Navin Varma <navinvarma@gmail.com>",
+    "keywords": [
+        "health",
+        "tracking",
+        "bloodpressure",
+        "glucose",
+        "weightloss"
+    ],
+    "dependencies": {
+        "express": "^4.17.1",
+        "nodemailer": "^6.6.3",
+        "path": "0.11.x"
+    },
+    "preferGlobal": false,
+    "private": true,
+    "license": "MIT"
+}
