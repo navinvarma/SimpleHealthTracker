@@ -23,7 +23,8 @@ You'll need to go to the [Google Cloud Console](https://console.cloud.google.com
 
 More info here https://nodemailer.com/smtp/oauth2/
 
-For keeping things simple (less secure though!), this example uses Gmail basic auth as of now.
+For keeping things simple (less secure though!), this example uses Gmail basic auth as of now using an "App Password".
+https://support.google.com/accounts/answer/185833
 
 ## Run App
 Run from command line to start Node.js server
